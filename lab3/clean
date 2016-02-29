@@ -1,0 +1,3 @@
+cp ../imgs/mtximage ./mtximage
+rm *.o
+rm mtx

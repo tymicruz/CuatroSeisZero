@@ -1,0 +1,22 @@
+VFD=mtximage
+
+as86 -o ts.o ts.s
+bcc  -c -ansi t.c
+bcc  -c -ansi bio.c
+
+ld86 -d -o mtx ts.o t.o bio.o mtxlib /usr/lib/bcc/libc.a
+
+echo mount $VFD on /mnt
+
+mount -o loop $VFD /mnt
+
+rm /mnt/boot/*
+
+cp mtx /mnt/boot
+umount /mnt
+
+#each ready to go?
+#read dummy
+
+qemu-system-i386 -fda $VFD -no-fd-bootchk
+
