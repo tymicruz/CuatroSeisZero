@@ -1,0 +1,5 @@
+as86 -o bs.o bs.s
+bcc -c -ansi booter.c
+bcc -c -ansi bio.c
+ld86 -d bs.o booter.o bio.o /usr/lib/bcc/libc.a
+
