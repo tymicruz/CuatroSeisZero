@@ -1,0 +1,2 @@
+qemu -fda ../FDimage -no-fd-bootchk -parallel file:ABCD -boot a
+

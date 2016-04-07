@@ -1,0 +1,2 @@
+qemu -fda ../FDimage -no-fd-bootchk -parallel /dev/pts/1 -boot a
+

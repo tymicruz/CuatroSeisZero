@@ -1,0 +1,9 @@
+#VFD=/root/dosemu/mtximage
+VFD=/root/vmware/Other/fd
+
+mount -o loop $VFD /mnt
+
+umount /mnt
+
+mku u1
+mku u2

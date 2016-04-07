@@ -1,0 +1,18 @@
+VFD=../FDimage
+
+as86 -o ts.o ts.s
+bcc  -c -ansi t.c
+ld86 -d -o mtx ts.o t.o mtxlib /usr/lib/bcc/libc.a
+
+mount -o loop $VFD /mnt
+
+#vmware-mount $VFD 3 /mnt
+cp mtx /mnt/boot
+umount /mnt
+#vmware-mount -d /mnt
+
+rm *.o mtx
+
+(cd USER; mkallu)
+
+echo done

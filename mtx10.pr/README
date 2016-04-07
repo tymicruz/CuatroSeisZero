@@ -1,0 +1,14 @@
+             HOW TO TEST PRINTER DRIVER
+
+1. Run mk to generate a MTX bootable FD image
+
+2. Under QEMU:
+   qemu -fda FDimage -no-fd-bootchk -parallel /dev/pts/2   # use a PTS terminal
+
+3. Under VMware: Configure VM with
+   FDimage as floppy drive; connected at power on 
+   A parallel port = a file
+
+Boot up MTX from FDimage, run  pr command from User Mode.
+
+ 
